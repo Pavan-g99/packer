@@ -1,0 +1,33 @@
+
+{
+  "builders": [
+    {
+      "type": "azure-arm",
+      "client_id": "7db1e143-ef7b-4395-b725-fb6fce01fe79",
+      "client_secret": "xt18Q~L6lkLIhiCxwt5zaFqNl89vtA4uhZQcua7M",
+      "tenant_id": "1bcf0651-4bb9-44bb-9b75-b060253c2f61",
+      "subscription_id": "2dcfbd20-be21-4f9f-ae0e-6b145c92544a",
+      "managed_image_resource_group_name": "packerimage",
+      "managed_image_name": "nginx-image",
+      "os_type": "Linux",
+      "image_publisher": "Canonical",
+      "image_offer": "UbuntuServer",
+      "image_sku": "18.04-LTS",
+      "location": "East US",
+      "vm_size": "Standard_B1s",
+      "ssh_username": "azureuser",
+      "ssh_password": "packer plugins install github.com/hashicorp/azurepass123"
+    }
+  ],
+
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sudo apt-get update",
+        "sudo apt-get install -y nginx"
+      ]
+    }
+  ]
+}
+
